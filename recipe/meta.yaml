@@ -1,5 +1,5 @@
 {% set name = "segy" %}
-{% set version = "0.0.12" %}
+{% set version = "0.0.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/segy-{{ version }}.tar.gz
-  sha256: 7393d4db24ee5065a02807e68e3d341d4d4c37d99a85f0323bf1670b9d366a97
+  sha256: 4bd8a035997d4f7442f61bf2228b9019228e4b355d23102932031d24cc753b77
 
 build:
   entry_points:
