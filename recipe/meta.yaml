@@ -1,5 +1,5 @@
 {% set name = "segy" %}
-{% set version = "0.0.15" %}
+{% set version = "0.0.16" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/segy-{{ version }}.tar.gz
-  sha256: 70d7c638f4e942a205f8789530b2033946db2dc548723ce949bd5b55762bf164
+  sha256: 296fc144242c9d356c76fc009595529fa0fd44b8b23726bbde3b70d864750279
 
 build:
   entry_points:
@@ -24,19 +24,19 @@ requirements:
     - pip
   run:
     - python >=3.9,<3.13
-    - fsspec >=2024.2.0
+    - fsspec >=2024.3.1
     - numpy >=1.26.4,<2.0.0
-    - pydantic >=2.6.4,<3.0.0
+    - pydantic >=2.7.1,<3.0.0
     - pydantic-settings >=2.2.1,<3.0.0
     - numba >=0.59.1,<0.60.0
-    - pandas >=2.2.1,<3.0.0
+    - pandas >=2.2.2,<3.0.0
     - bidict >=0.23.1,<0.24.0
-    - typer >=0.12.0,<0.13.0
+    - typer >=0.12.3,<0.13.0
     - eval-type-backport >=0.1.3,<0.2.0
   run_constrained:
-    - gcsfs >=2024.2.0
-    - s3fs >=2024.2.0
-    - adlfs >=2024.2.0
+    - gcsfs >=2024.3.1
+    - s3fs >=2024.3.1
+    - adlfs >=2024.4.1
 
 test:
   imports:
