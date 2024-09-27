@@ -14,7 +14,7 @@ build:
     - segy = segy.cli.segy:app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -37,7 +37,7 @@ requirements:
   run_constrained:
     - gcsfs >=2024.9.0.post1
     - s3fs >=2024.9.0
-    - adlfs >=2024.7.1
+    - adlfs >=2024.7.0
 
 test:
   imports:
