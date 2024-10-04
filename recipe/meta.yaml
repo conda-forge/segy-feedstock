@@ -1,5 +1,5 @@
 {% set name = "segy" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/segy-{{ version }}.tar.gz
-  sha256: 584a8e1bce56d056175feb56e45d6d8cba080dd9cc7a610a023de5bf359585b3
+  sha256: 271fa61c7b50978cc055d9d945a211e644d4185d212cfe62274822af654cc485
 
 build:
   entry_points:
     - segy = segy.cli.segy:app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -28,7 +28,7 @@ requirements:
     - numpy >=1.26.4,<2.0.0
     - pydantic >=2.9.0,<3.0.0
     - pydantic-settings >=2.4.0,<3.0.0
-    - numba >=0.60.0,<1.0.0
+    - numba >=0.59.1,<1.0.0
     - pandas >=2.2.2,<3.0.0
     - bidict >=0.23.1,<0.24.0
     - typer >=0.12.5,<0.13.0
