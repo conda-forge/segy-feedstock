@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/segy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/segy-{{ version }}.tar.gz
   sha256: a9f1382314145fd80caefaed1aab936e1286f3fbf31b73ff86e3b04339bb3248
 
 build:
@@ -14,16 +14,16 @@ build:
     - segy = segy.cli.segy:app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9,<3.13
+    - python {{ python_min }}
     - poetry-core
     - fastentrypoints
     - pip
   run:
-    - python >=3.9,<3.13
+    - python >={{ python_min }},<3.13
     - fsspec >=2024.10.0
     - numpy >=2.0.0,<3.0.0
     - pydantic >=2.9.2,<3.0.0
@@ -46,6 +46,7 @@ test:
     - segy --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/TGSAI/segy
