@@ -1,5 +1,5 @@
 {% set name = "segy" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/segy-{{ version }}.tar.gz
-  sha256: a9f1382314145fd80caefaed1aab936e1286f3fbf31b73ff86e3b04339bb3248
+  sha256: 649f336c593492674db5a1b1e83cddef503f9e5201743d397fcc72d529bee9a8
 
 build:
   entry_points:
     - segy = segy.cli.segy:app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -32,7 +32,6 @@ requirements:
     - pandas >=2.2.2,<3.0.0
     - typer >=0.13.1,<0.14.0
     - rapidfuzz >=3.10.1,<4.0.0
-    - eval-type-backport >=0.2.0,<0.3.0
   run_constrained:
     - gcsfs >=2024.10.0
     - s3fs >=2024.10.0
