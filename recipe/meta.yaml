@@ -32,7 +32,6 @@ requirements:
     - pandas >=2.2.2,<3.0.0
     - typer >=0.13.1,<0.14.0
     - rapidfuzz >=3.10.1,<4.0.0
-    - eval-type-backport >=0.2.0,<0.3.0
   run_constrained:
     - gcsfs >=2024.10.0
     - s3fs >=2024.10.0
