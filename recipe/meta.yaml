@@ -18,13 +18,13 @@ build:
 
 requirements:
   host:
-    - python >={{ python_min }},<3.13
+    - python >={{ python_min }},<3.14
     - setuptools
     - wheel
     - fastentrypoints
     - pip
   run:
-    - python >=3.10,<3.14
+    - python >={{ python_min }},<3.14
     - fsspec >=2024.10.0
     - numpy >=2.0.0,<3.0.0
     - pydantic >=2.9.2,<3.0.0
@@ -41,6 +41,7 @@ test:
     - pip check
     - segy --help
   requires:
+    - python >={{ python_min }},<3.14
     - pip
 
 about:
