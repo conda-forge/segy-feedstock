@@ -1,5 +1,5 @@
 {% set name = "segy" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1.post2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/segy-{{ version }}.tar.gz
-  sha256: bf2d17dbf32e5cc86c443cf28b19ed90c67edad8ea6c69da39d0167f31d30daf
+  sha256: e45ab7d6008bd75e490638143329992a61af57916e064086ce559e77e62500e3
 
 build:
   entry_points:
@@ -18,24 +18,21 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
-    - poetry-core
+    - python >={{ python_min }},<3.14
+    - setuptools
+    - wheel
     - fastentrypoints
     - pip
   run:
-    - python >={{ python_min }},<3.13
+    - python >={{ python_min }},<3.14
     - fsspec >=2024.10.0
     - numpy >=2.0.0,<3.0.0
     - pydantic >=2.9.2,<3.0.0
     - pydantic-settings >=2.6.1,<3.0.0
-    - numba >=0.59.1,<1.0.0
+    - numba >=0.61.0,<0.70.0
     - pandas >=2.2.2,<3.0.0
     - typer >=0.13.1,<0.14.0
     - rapidfuzz >=3.10.1,<4.0.0
-  run_constrained:
-    - gcsfs >=2024.10.0
-    - s3fs >=2024.10.0
-    - adlfs >=2024.7.0
 
 test:
   imports:
@@ -44,8 +41,8 @@ test:
     - pip check
     - segy --help
   requires:
+    - python >={{ python_min }},<3.14
     - pip
-    - python {{ python_min }}
 
 about:
   home: https://github.com/TGSAI/segy
