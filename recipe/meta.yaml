@@ -1,5 +1,5 @@
 {% set name = "segy" %}
-{% set version = "0.4.1.post2" %}
+{% set version = "0.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/segy-{{ version }}.tar.gz
-  sha256: e45ab7d6008bd75e490638143329992a61af57916e064086ce559e77e62500e3
+  sha256: 3782aed57b0507ac64094ad51284c42f691cf8c1f96c0c00b60ff594232b17d3
 
 build:
   entry_points:
@@ -31,7 +31,7 @@ requirements:
     - pydantic-settings >=2.6.1,<3.0.0
     - numba >=0.61.0,<0.70.0
     - pandas >=2.2.2,<3.0.0
-    - typer >=0.13.1,<0.14.0
+    - typer >=0.16.0,<0.17.0
     - rapidfuzz >=3.10.1,<4.0.0
 
 test:
