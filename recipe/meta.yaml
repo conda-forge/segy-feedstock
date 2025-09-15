@@ -1,5 +1,5 @@
 {% set name = "segy" %}
-{% set version = "0.4.2" %}
+{% set version = "0.5.0.post1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/segy-{{ version }}.tar.gz
-  sha256: 3782aed57b0507ac64094ad51284c42f691cf8c1f96c0c00b60ff594232b17d3
+  sha256: b8c140fb10cfd4807bc6aab46a6f09d98b82c4995e045f568be3bbf6c044aba6
 
 build:
   entry_points:
@@ -19,9 +19,7 @@ build:
 requirements:
   host:
     - python >={{ python_min }},<3.14
-    - setuptools
-    - wheel
-    - fastentrypoints
+    - uv-build >=0.8.17,<0.9.0
     - pip
   run:
     - python >={{ python_min }},<3.14
